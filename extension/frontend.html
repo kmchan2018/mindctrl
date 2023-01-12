@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Mindctrl Console</title>
+		<link href="common.css" rel="stylesheet">
+	</head>
+
+	<body>
+		<div id="root" class="w-full h-full development console startable">
+			<article id="main" class="flex flex-col w-full h-full p-none m-none b-none font-sans text-black">
+				<header id="header" class="flex flex-row grow-0 shrink-0 gap-control items-center w-full h-header px-inset bg-gray40 select-none">
+					<div id="brand" class="grow shrink text-base font-bold leading-header whitespace-nowrap text-ellipsis">Mindctrl</div>
+					<button id="start-action" class="group w-action h-action grow-0 shrink-0 bg-none text-gray50 hover:text-gray70 focus:text-gray70 active:text-black cursor-pointer only-console only-startable">
+						<!-- https://github.com/google/material-design-icons/blob/4.0.0/src/av/play_arrow/materialiconssharp/24px.svg -->
+						<svg class="w-action h-action fill-gray50 group-hover:fill-gray80 group-focus:fill-gray60 group-active:fill-black"
+							height="24" viewBox="0 0 24 24" width="24"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M8 5v14l11-7L8 5z"/></svg>
+					</button>
+					<button id="stop-action" class="group w-action h-action grow-0 shrink-0 bg-none text-gray60 hover:text-gray70 focus:text-gray70 active:text-black cursor-pointer only-console only-stoppable">
+						<!-- https://github.com/google/material-design-icons/blob/4.0.0/src/av/stop/materialiconssharp/24px.svg -->
+						<svg class="w-action h-action fill-gray50 group-hover:fill-gray80 group-focus:fill-gray60 group-active:fill-black"
+							height="24" viewBox="0 0 24 24" width="24"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M6 6h12v12H6V6z"/></svg>
+					</button>
+					<button id="options-action" class="group w-action h-action grow-0 shrink-0 bg-none text-gray50 hover:text-gray70 focus:text-gray70 active:text-black cursor-pointer only-console">
+						<!-- https://github.com/google/material-design-icons/blob/4.0.0/src/image/tune/materialiconssharp/24px.svg -->
+						<svg class="w-action h-action fill-gray50 group-hover:fill-gray80 group-focus:fill-gray60 group-active:fill-black"
+							height="24" viewBox="0 0 24 24" width="24"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M3 17v2h6v-2H3zM3 5v2h10V5H3zm10 16v-2h8v-2h-8v-2h-2v6h2zM7 9v2H3v2h4v2h2V9H7zm14 4v-2H11v2h10zm-6-4h2V7h4V5h-4V3h-2v6z"/></svg>
+					</button>
+					<button id="about-action" class="group w-action h-action grow-0 shrink-0 bg-none text-gray50 hover:text-gray70 focus:text-gray70 active:text-black cursor-pointer only-console">
+						<!-- https://github.com/google/material-design-icons/blob/4.0.0/src/action/help_outline/materialiconssharp/24px.svg -->
+						<svg class="w-action h-action fill-gray50 group-hover:fill-gray80 group-focus:fill-gray80 group-active:fill-black"
+							height="24" viewBox="0 0 24 24" width="24"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M11 18h2v-2h-2v2zm1-16C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm0-14c-2.21 0-4 1.79-4 4h2c0-1.1.9-2 2-2s2 .9 2 2c0 2-3 1.75-3 5h2c0-2.25 3-2.5 3-5 0-2.21-1.79-4-4-4z"/></svg>
+					</button>
+					<button id="back-action" class="group w-action h-action grow-0 shrink-0 bg-none text-gray50 hover:text-gray70 focus:text-gray70 active:text-black cursor-pointer not-console">
+						<!-- https://github.com/google/material-design-icons/blob/4.0.0/src/navigation/arrow_back/materialiconssharp/24px.svg -->
+						<svg class="w-action h-action fill-gray50 group-hover:fill-gray80 group-focus:fill-gray80 group-active:fill-black"
+							height="24" viewBox="0 0 24 24" width="24"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/></svg>
+					</button>
+				</header>
+
+				<div id="content" class="grow shrink w-full px-frame my-frame text-xs overflow-x-hidden overflow-y-scroll">
+					<table class="w-full border-collapse font-mono only-console">
+						<tbody id="templates" class="only-development">
+							<tr class="hover:bg-gray20">
+								<td class="time w-timestamp pl-delta py-halfline">15:36</td>
+								<td class="text pr-delta py-halfline">Welcome to Mindctrl Console</td>
+							</tr>
+							<tr class="hover:bg-gray20">
+								<td class="time w-timestamp pl-delta py-halfline">15:36</td>
+								<td class="text pr-delta py-halfline">Welcome to Mindctrl Console</td>
+							</tr>
+							<tr class="hover:bg-gray20">
+								<td class="time w-timestamp pl-delta py-halfline">15:37</td>
+								<td class="text pr-delta py-halfline">Mindctrl is connecting to server ws://localhost:17777</td>
+							</tr>
+							<tr class="hover:bg-gray20">
+								<td class="time w-timestamp pl-delta py-halfline">15:37</td>
+								<td class="text pr-delta py-halfline">Mindctrl is connected to server ws://localhost:17777</td>
+							</tr>
+							<tr class="hover:bg-gray20">
+								<td class="time w-timestamp pl-delta py-halfline">15:37</td>
+								<td class="text pr-delta py-halfline">Mindctrl is ready to handle incoming requests</td>
+							</tr>
+							<tr class="hover:bg-gray20">
+								<td class="time w-timestamp pl-delta py-halfline">15:38</td>
+								<td class="text pr-delta py-halfline">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</td>
+							</tr>
+							<tr class="hover:bg-gray20">
+								<td class="time w-timestamp pl-delta py-halfline">15:40</td>
+								<td class="text pr-delta py-halfline">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</td>
+							</tr>
+							<tr class="hover:bg-gray20">
+								<td class="time w-timestamp pl-delta py-halfline">15:41</td>
+								<td class="text pr-delta py-halfline">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</td>
+							</tr>
+							<tr class="hover:bg-gray20">
+								<td class="time w-timestamp pl-delta py-halfline">15:42</td>
+								<td class="text pr-delta py-halfline">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</td>
+							</tr>
+							<tr class="hover:bg-gray20">
+								<td class="time w-timestamp pl-delta py-halfline">15:44</td>
+								<td class="text pr-delta py-halfline">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</td>
+							</tr>
+							<tr class="hover:bg-gray20">
+								<td class="time w-timestamp pl-delta py-halfline">15:45</td>
+								<td class="text pr-delta py-halfline">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</td>
+							</tr>
+							<tr class="hover:bg-gray20">
+								<td class="time w-timestamp pl-delta py-halfline">15:48</td>
+								<td class="text pr-delta py-halfline">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</td>
+							</tr>
+							<tr class="hover:bg-gray20">
+								<td class="time w-timestamp pl-delta py-halfline">15:51</td>
+								<td class="text pr-delta py-halfline">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</td>
+							</tr>
+						</tbody>
+						<tbody id="messages" class="only-production">
+						</tbody>
+					</table>
+
+					<form id="options" class="flex flex-col gap-line w-full h-full px-delta py-line font-sans select-none only-options">
+						<p class="w-full grow-0 shrink-0">
+							Mindctrl depends on external MQTT server to communicate with clients. Therefore,
+							Mindctrl needs to know the information about the MQTT server, as well as the
+							name it uses to identify itself to clients.
+						</p>
+
+						<p class="w-full grow-0 shrink-0">
+							Note that saving the preferences here does <b>not</b> affect running service.
+							The saved preferences will only be applied after a restart.
+						</p>
+
+						<div class="w-full grow-0 shrink-0" title="URL to the MQTT server">
+							<label for="url">Server</label>
+							<div class="pt-control">
+								<input class="w-full h-control px-control rounded border-input border-gray30 outline outline-0 invalid:border-danger invalid:border-red50 invalid:outline-danger invalid:outline-red50t focus:border-focus focus:border-blue50 focus:outline-focus focus:outline-focus focus:outline-blue50t active:border-focus active:border-blue50 active:outline-focus active:outline-blue50t" type="text" name="url" required>
+							</div>
+						</div>
+
+						<div class="w-full grow-0 shrink-0" title="Name the browser identifies itself with clients">
+							<label for="name">Name</label>
+							<div class="pt-control">
+								<input class="w-full h-control px-control rounded border-input border-gray30 outline outline-0 invalid:border-focus invalid:border-red50 invalid:outline-danger invalid:outline-red50t focus:border-focus focus:border-blue50 focus:outline-focus focus:outline-focus focus:outline-blue50t active:border-focus active:border-blue50 active:outline-focus active:outline-blue50t" type="text" name="name" required>
+							</div>
+						</div>
+
+						<div class="w-full grow-0 shrink-0" title="Username for the MQTT server; left empty if not necessary">
+							<label for="username">Username</label>
+							<div class="pt-control">
+								<input class="w-full h-control px-control rounded border-input border-gray30 outline outline-0 focus:border-focus focus:border-blue50 focus:outline-focus focus:outline-focus focus:outline-blue50t active:border-focus active:border-blue50 active:outline-focus active:outline-blue50t" type="text" name="username">
+							</div>
+						</div>
+
+						<div class="w-full grow-0 shrink-0" title="Password for the MQTT server; left empty if not necessary">
+							<label for="password">Password</label>
+							<div class="pt-control">
+								<input class="w-full h-control px-control rounded border-input border-gray30 outline outline-0 focus:border-focus focus:border-blue50 focus:outline-focus focus:outline-focus focus:outline-blue50t active:border-focus active:border-blue50 active:outline-focus active:outline-blue50t" type="text" name="password">
+							</div>
+						</div>
+
+						<div class="grow shrink"></div>
+
+						<div class="flex flex-row grow-0 shrink-0 gap-control w-full actions">
+							<button class="min-w-button h-control grow-0 shrink-0 text-center px-control rounded border-0 outline outline-0 text-white bg-blue60 hover:bg-blue70 focus:bg-blue60 focus:outline-focus focus:outline-blue50t active:bg-blue80 active:outline-focus active:outline-blue50t" name="submit" type="submit">Save Preferences</button>
+							<button class="min-w-button h-control grow-0 shrink-0 text-center px-control rounded border-0 outline outline-0 text-black bg-gray30 hover:bg-gray40 focus:bg-gray30 focus:border-focus focus:border-blue50 focus:outline-focus focus:outline-blue50t active:bg-gray50 active:border-focus active:border-blue50 active:outline-focus active:outline-blue50t" name="reload" type="button">Reload Preferences</button>
+							<div class="grow shrink"></div>
+						</div>
+					</form>
+
+					<div id="about" class="gap-line w-full px-delta py-line font-sans select-none only-about">
+						<p class="w-full mb-line grow-0 shrink-0">
+							This software is licensed under MIT License.
+						</p>
+
+						<p class="w-full mb-line grow-0 shrink-0">
+							Moreover, this software is developed on top of various libraries and tools; therefore it
+							may contains code and assets from these projects. The full list can be found in the source
+							code of the projects, and below are a few important ones:
+						</p>
+
+						<p class="w-full mb-line grow-0 shrink-0">
+							This software is written in <b>TypeScript</b>. The compiler is licensed under Apache License
+							Version 2.0. More information can be found in its 
+							<a class="text-blue50 underline" href="https://www.typescriptlang.org/" target="_new" rel="external" referrerpolicy="no-referrer">website</a>.
+						</p>
+
+						<p class="w-full mb-line grow-0 shrink-0">
+							This software is packaged with <b>Webpack</b>. The compiler is licensed under MIT License.
+							More information can be found in its 
+							<a class="text-blue50 underline" href="https://webpack.js.org/" target="_new" rel="external" referrerpolicy="no-referrer">website</a>.
+						</p>
+
+						<p class="w-full mb-line grow-0 shrink-0">
+							This software uses <b>MQTT.js</b> library to communicate with MQTT server. For more
+							information, please visit its
+							<a class="text-blue50 underline" href="https://github.com/mqttjs/MQTT.js" target="_new" rel="external" referrerpolicy="no-referrer">website</a>.
+							Also, to use the library in a browser environment, it needs some polyfills for Node.js API including
+							<a class="text-blue50 underline" href="https://github.com/feross/buffer" target="_new" rel="external" referrerpolicy="no-referrer"><b>buffer</b></a> and
+							<a class="text-blue50 underline" href="https://github.com/defunctzombie/node-process" target="_new" rel="external" referrerpolicy="no-referrer"><b>process</b></a>.
+							All of the packages are licensed under MIT license.
+						</p>
+
+						<p class="w-full mb-line grow-0 shrink-0">
+							This software also uses the <b>WebExtension Browser Polyfill</b> library to support
+							cross-browser web extension development. The library is licensed under Mozilla Public
+							License Version 2.0. For more information, please check out its
+							<a class="text-blue50 underline" href="https://github.com/mozilla/webextension-polyfill" target="_new" rel="external" referrerpolicy="no-referrer">website</a>.
+						</p>
+
+						<p class="w-full mb-line grow-0 shrink-0">
+							Next, this software builds its stylesheets upon <b>Tailwind CSS</b> framework and contains code
+							from the project. It is licensed under MIT License. More information can be found at its
+							<a class="text-blue50 underline" href="https://tailwindcss.com/" target="_new" rel="external" referrerpolicy="no-referrer">website</a>.
+						</p>
+
+						<p class="w-full grow-0 shrink-0">
+							Last but not least, this software also uses icons from <b>Material Design Icons</b>, which
+							is released under Apache License Version 2.0. More information can be found at its
+							<a class="text-blue50 underline" href="https://developers.google.com/fonts/docs/material_icons" target="_new" rel="external" referrerpolicy="no-referrer">website</a>.
+						</p>
+					</div>
+				</div>
+
+				<footer id="footer" class="flex flex-row grow-0 shrink-0 w-full h-footer px-inset text-xs leading-footer whitespace-nowrap text-ellipsis bg-gray40 text-black select-none">
+					Idle
+				</footer>
+			</article>
+		</div>
+
+		<script type="text/javascript" src="frontend.js"></script>
+	</body>
+</html>

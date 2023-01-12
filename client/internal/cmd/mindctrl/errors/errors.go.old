@@ -1,0 +1,79 @@
+package errors
+
+import (
+	"fmt"
+)
+
+type FlagError struct {
+	wrapped error
+}
+
+func NewFlagError(err) *FlagError {
+	return &FlagError{
+		wrapped: nil,
+	}
+}
+
+func (err *FlagError) Error() string {
+	return err.wrapped.Error()
+}
+
+func (err *FlagError) Unwrap() error {
+	return err.wrapped
+}
+
+func (err *FlagError) Is(target error) bool {
+	_, ok := target.(*FlagError)
+	return ok
+}
+
+type ArgumentError struct {
+	message string
+}
+
+func NewArgumentError(format string, a ...interface{}) *ArgumentError {
+	return &ArgumentError{
+		message: fmt.Sprintf(format, a...),
+	}
+}
+
+func (err *ArgumentError) Error() string {
+	return err.message
+}
+
+func (err *ArgumentError) Is(target error) bool {
+	_, ok := target.(*ArgumentError)
+	return ok
+}
+
+type ExecutionError struct {
+	message string
+	wrapped error
+}
+
+func NewExecutionError(format string, a ...interface{}) *ExecutionError {
+	return &ExecutionError{
+		message: fmt.Sprintf(format, a...),
+		wrapped: nil,
+	}
+}
+
+func WrapExecutionError(err error, format string, a ...interface{}) *ExecutionError {
+	return &ExecutionError{
+		message: fmt.Sprintf(format, a...),
+		wrapped: err,
+	}
+}
+
+func (err *ExecutionError) Error() string {
+	return err.message
+}
+
+func (err *ExecutionError) Unwrap() error {
+	return err.wrapped
+}
+
+func (err *ExecutionError) Is(target error) bool {
+	_, ok := target.(*ExecutionError)
+	return ok
+}

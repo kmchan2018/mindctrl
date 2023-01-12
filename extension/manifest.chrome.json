@@ -1,0 +1,46 @@
+{
+	"manifest_version": 3,
+
+	"name": "Mindctrl",
+	"version": "0.0.1",
+  "description": "Mind control the browser to do anything at the master's bidding",
+
+	"icons": {
+		"48": "icons/icon-normal.png"
+	},
+
+	"permissions": [
+		"activeTab",
+		"downloads",
+		"history",
+		"scripting",
+		"storage",
+		"tabs"
+	],
+
+	"host_permissions": [
+		"<all_urls>"
+	],
+
+	"action": {
+	  "default_title": "Mindctrl",
+
+  	"default_icon": {
+	    "48": "icons/icon-normal.png"
+  	},
+
+		"theme_icons": [{
+	    "light": "icons/icon-normal.png",
+	    "dark": "icons/icons-dark.png",
+	    "size": 48
+  	}]
+	},
+
+	"background": {
+	  "service_worker": "background.js"
+	},
+
+  "options_ui": {
+    "page": "options.html"
+  }
+}

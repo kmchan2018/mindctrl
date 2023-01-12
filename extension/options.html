@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<title>Mindctrl Options</title>
+		<link href="common.css" rel="stylesheet">
+	</head>
+
+	<body class="w-full h-full text-xl">
+		<form id="options" class="flex flex-col gap-line w-full h-full px-delta py-line font-sans select-none">
+			<p class="w-full grow-0 shrink-0">
+				Mindctrl depends on external MQTT server to communicate with clients. Therefore,
+				Mindctrl needs to know the information about the MQTT server, as well as the
+				name it uses to identify itself to clients.
+			</p>
+
+			<p class="w-full grow-0 shrink-0">
+				Note that saving the preferences here does <b>not</b> affect running service.
+				The saved preferences will only be applied after a restart.
+			</p>
+
+			<div class="w-full grow-0 shrink-0" title="URL to the MQTT server">
+				<label for="url">Server</label>
+				<div class="pt-control">
+					<input class="w-full h-control px-control rounded border-input border-gray30 outline outline-0 invalid:border-danger invalid:border-red50 invalid:outline-danger invalid:outline-red50t focus:border-focus focus:border-blue50 focus:outline-focus focus:outline-focus focus:outline-blue50t active:border-focus active:border-blue50 active:outline-focus active:outline-blue50t" type="text" name="url" required />
+				</div>
+			</div>
+
+			<div class="w-full grow-0 shrink-0" title="Name the browser identifies itself with clients">
+				<label for="name">Name</label>
+				<div class="pt-control">
+					<input class="w-full h-control px-control rounded border-input border-gray30 outline outline-0 invalid:border-focus invalid:border-red50 invalid:outline-danger invalid:outline-red50t focus:border-focus focus:border-blue50 focus:outline-focus focus:outline-focus focus:outline-blue50t active:border-focus active:border-blue50 active:outline-focus active:outline-blue50t" type="text" name="name" required />
+				</div>
+			</div>
+
+			<div class="w-full grow-0 shrink-0" title="Username for the MQTT server; left empty if not necessary">
+				<label for="username">Username</label>
+				<div class="pt-control">
+					<input class="w-full h-control px-control rounded border-input border-gray30 outline outline-0 focus:border-focus focus:border-blue50 focus:outline-focus focus:outline-focus focus:outline-blue50t active:border-focus active:border-blue50 active:outline-focus active:outline-blue50t" type="text" name="username" />
+				</div>
+			</div>
+
+			<div class="w-full grow-0 shrink-0" title="Password for the MQTT server; left empty if not necessary">
+				<label for="password">Password</label>
+				<div class="pt-control">
+					<input class="w-full h-control px-control rounded border-input border-gray30 outline outline-0 focus:border-focus focus:border-blue50 focus:outline-focus focus:outline-focus focus:outline-blue50t active:border-focus active:border-blue50 active:outline-focus active:outline-blue50t" type="text" name="password" />
+				</div>
+			</div>
+
+			<div class="grow shrink"></div>
+
+			<div class="flex flex-row grow-0 shrink-0 gap-control w-full actions">
+				<button class="min-w-button h-control grow-0 shrink-0 text-center px-control rounded border-0 outline outline-0 text-white bg-blue60 hover:bg-blue70 focus:bg-blue60 focus:outline-focus focus:outline-blue50t active:bg-blue80 active:outline-focus active:outline-blue50t" name="submit" type="submit">Save Preferences</button>
+				<button class="min-w-button h-control grow-0 shrink-0 text-center px-control rounded border-0 outline outline-0 text-black bg-gray30 hover:bg-gray40 focus:bg-gray30 focus:border-focus focus:border-blue50 focus:outline-focus focus:outline-blue50t active:bg-gray50 active:border-focus active:border-blue50 active:outline-focus active:outline-blue50t" name="reload" type="button">Reload Preferences</button>
+				<div class="grow shrink"></div>
+			</div>
+		</form>
+
+    <script type="text/javascript" src="options.js"></script>
+	</body>
+</html>
