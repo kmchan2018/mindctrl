@@ -2,7 +2,7 @@
 	"manifest_version": 2,
 
 	"name": "Mindctrl",
-	"version": "0.0.1",
+	"version": "0.0.2",
 	"description": "Mind control the browser to do anything at the master's bidding",
 
 	"icons": {
