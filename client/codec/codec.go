@@ -54,7 +54,7 @@ func NewCodec(url string, name string, server string, options *Options) (*Codec,
 		})
 
 		connectPacket := &paho.Connect{
-			KeepAlive:    0,
+			KeepAlive:    options.getMqttKeepAlive(),
 			ClientID:     protocol.GenerateMqttClientId(name),
 			CleanStart:   true,
 			UsernameFlag: options.getPahoUsernameFlag(),

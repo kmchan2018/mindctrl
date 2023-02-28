@@ -20,6 +20,7 @@ type Options struct {
 	Password           string // password for the intermediate MQTT broker
 	WebsocketFrameSize int64  // maximum size of websocket packet
 	MqttMessageBuffer  int    // number of MQTT messages buffered by the codec
+	MqttKeepAlive      int    // keepalive duration of MQTT connection
 }
 
 func (options *Options) getPahoUsernameFlag() bool {
@@ -77,5 +78,21 @@ func (options *Options) getMqttMessageBuffer() int {
 		return 100
 	} else {
 		return options.MqttMessageBuffer
+	}
+}
+
+func (options *Options) getMqttKeepAlive() uint16 {
+	if options == nil {
+		return 1800
+	} else if options.MqttKeepAlive < 0 {
+		return 0
+	} else if options.MqttKeepAlive == 0 {
+		return 1800
+	} else if options.MqttKeepAlive <= 300 {
+		return 300
+	} else if options.MqttKeepAlive >= 65535 {
+		return 65535
+	} else {
+		return uint16(options.MqttKeepAlive)
 	}
 }
