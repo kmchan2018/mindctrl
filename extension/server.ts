@@ -232,7 +232,7 @@ export async function start() {
 		const client = Mqtt.connect(config.url, {
 			username: (config.username != '' ? config.username : undefined),
 			password: (config.password != '' ? config.password : undefined),
-			keepalive: 0,
+			keepalive: 1800,
 			connectTimeout: 10 * 1000,
 			reconnectPeriod: 0,
 			clean: true,
