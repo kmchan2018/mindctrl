@@ -3,7 +3,7 @@
 
 	"name": "Mindctrl",
 	"version": "0.0.1",
-  "description": "Mind control the browser to do anything at the master's bidding",
+	"description": "Mind control the browser to do anything at the master's bidding",
 
 	"icons": {
 		"48": "icons/icon-normal.png"
@@ -23,24 +23,18 @@
 	],
 
 	"action": {
-	  "default_title": "Mindctrl",
+		"default_title": "Mindctrl",
 
-  	"default_icon": {
-	    "48": "icons/icon-normal.png"
-  	},
-
-		"theme_icons": [{
-	    "light": "icons/icon-normal.png",
-	    "dark": "icons/icons-dark.png",
-	    "size": 48
-  	}]
+		"default_icon": {
+			"48": "icons/icon-normal.png"
+		}
 	},
 
 	"background": {
-	  "service_worker": "background.js"
+		"service_worker": "background.js"
 	},
 
-  "options_ui": {
-    "page": "options.html"
-  }
+	"options_ui": {
+		"page": "options.html"
+	}
 }

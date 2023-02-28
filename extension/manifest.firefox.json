@@ -3,7 +3,7 @@
 
 	"name": "Mindctrl",
 	"version": "0.0.1",
-  "description": "Mind control the browser to do anything at the master's bidding",
+	"description": "Mind control the browser to do anything at the master's bidding",
 
 	"icons": {
 		"48": "icons/icon-normal.png"
@@ -20,31 +20,31 @@
 	],
 
 	"browser_action": {
-	  "default_title": "Mindctrl",
+		"default_title": "Mindctrl",
 
-  	"default_icon": {
-	    "48": "icons/icon-normal.png"
-  	},
+		"default_icon": {
+			"48": "icons/icon-normal.png"
+		},
 
 		"theme_icons": [{
-	    "light": "icons/icon-normal.png",
-	    "dark": "icons/icons-dark.png",
-	    "size": 48
-  	}]
+			"light": "icons/icon-dark.png",
+			"dark": "icons/icon-normal.png",
+			"size": 48
+		}]
 	},
 
 	"background": {
-	  "scripts": [ "background.js" ]
+		"scripts": [ "background.js" ]
 	},
 
-  "options_ui": {
-    "page": "options.html"
-  },
+	"options_ui": {
+		"page": "options.html"
+	},
 
 	"browser_specific_settings": {
-  	"gecko": {
-	    "id": "mindctrl@kmchan3.space",
-  	  "strict_min_version": "102.0"
-	  }
+		"gecko": {
+			"id": "mindctrl@kmchan3.space",
+			"strict_min_version": "102.0"
+		}
 	}
 }
